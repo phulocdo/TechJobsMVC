@@ -6,12 +6,14 @@
     <p>
         @foreach (KeyValuePair<string, string> column in ViewBag.columns)
         {
+
             <span>
                 <input type="radio"
                        name="searchType"
                        id="@column.Key"
                        value="@column.Key"
-                       checked="@column.Key == 'all''" />
+                       checked="@(column.Key == ViewBag.searchType)"/>
+
                 <label for="@column.Key">@column.Value</label>
             </span>
         }

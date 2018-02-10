@@ -15,7 +15,7 @@
     {
         <tr>
             <td>@dict.Key</td>
-            <td>@dict.Value</td>
+            <td><a asp-controller="List" asp-action="Jobs" asp-route-column="@dict.Key" asp-route-value="@dict.Value">@dict.Value</a></td>
         </tr>
 
     }
