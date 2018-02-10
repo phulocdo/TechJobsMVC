@@ -12,7 +12,7 @@
                        name="searchType"
                        id="@column.Key"
                        value="@column.Key"
-                       checked="@(column.Key == ViewBag.searchType)"/>
+                       checked="@(column.Key == ViewBag.searchType)" />
 
                 <label for="@column.Key">@column.Value</label>
             </span>
@@ -33,22 +33,30 @@
 {
 
     <h3>@ViewBag.jobs.Count Result(s)</h3>
+    @Html.Partial("_ListJobs");
+}
 
     // TODO #2 - Loop over jobs dictionary and display all job fields
-    @foreach (var job in ViewBag.jobs)
-    {
-        <table class="job-listing">
-        @foreach (KeyValuePair<string, string> dict in job)
-        {
 
-        <tr>
-            <td>@dict.Key.</td>
-            <td>@dict.Value</td>
-        </tr>
+    @*
+            @foreach (var job in ViewBag.jobs)
+            {
+                <table class="job-listing">
+                @foreach (KeyValuePair<string, string> dict in job)
+                {
+
+                <tr>
+                    <td>@dict.Key.</td>
+                    <td>@dict.Value</td>
+                </tr>
 
 
+                }
+                </table>
+
+             }
         }
-        </table>
+    *@
 
-     }
-}
+
+

@@ -52,8 +52,10 @@ namespace TechJobs.Controllers
             // ViewBag.title = "Jobs with " + columnChoices[column] + ": " + value;
             ViewBag.title = "Jobs with " + column + ": " + value;
             ViewBag.jobs = jobs;
-           
+
             return View();
+            
+            
         }
     }
 }

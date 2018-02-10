@@ -1,0 +1,18 @@
+﻿@*
+    Partial Views
+*@
+
+
+@foreach (var job in ViewBag.jobs)
+{
+    <table class="job-listing">
+        @foreach (KeyValuePair<string, string> dict in job)
+        {
+            <tr>
+                <td>@dict.Key</td>
+                <td><a asp-controller="List" asp-action="Jobs" asp-route-column="@dict.Key" asp-route-value="@dict.Value">@dict.Value</a></td>
+            </tr>
+
+        }
+    </table>
+}
