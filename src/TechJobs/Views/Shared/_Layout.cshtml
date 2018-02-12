@@ -31,6 +31,13 @@
         </div>
     </div>
     <div class="container body-content">
+        <p>View jobs by:</p>
+        <ul>
+            <li>@Html.ActionLink("List", "Index", "list")</li>
+            <li>@Html.ActionLink("Search", "Index", "search")</li>
+
+        </ul>
+
         @RenderBody()
     </div>
 

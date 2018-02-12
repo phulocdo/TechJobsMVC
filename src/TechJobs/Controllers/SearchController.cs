@@ -4,13 +4,14 @@ using TechJobs.Models;
 
 namespace TechJobs.Controllers
 {
-    public class SearchController : Controller
+    public class SearchController : TechJobsController
     {
         public IActionResult Index()
         {
             ViewBag.columns = ListController.columnChoices;
             ViewBag.title = "Search";
             ViewBag.searchType = "all";
+            ViewBag.searchTerm = "";
             return View();
         }
 
@@ -36,6 +37,7 @@ namespace TechJobs.Controllers
             ViewBag.columns = ListController.columnChoices;
             ViewBag.title = "Search by column and value";
             ViewBag.searchType = searchType;
+            ViewBag.searchTerm = searchTerm;
 
             return View("Index");
 
