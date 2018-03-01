@@ -5,14 +5,23 @@
 
 @foreach (var job in ViewBag.jobs)
 {
-    <table class="job-listing">
-        @foreach (KeyValuePair<string, string> dict in job)
-        {
-            <tr>
-                <td>@dict.Key</td>
-                <td><a asp-controller="List" asp-action="Jobs" asp-route-column="@dict.Key" asp-route-value="@dict.Value">@dict.Value</a></td>
-            </tr>
+<table class="job-listing">
+    @foreach (KeyValuePair<string, string> dict in job)
+    {
 
-        }
-    </table>
+        string[] mykey = dict.Key.Split(" ");
+        string uKey = "";
+        <tr>
+            @foreach(string key in mykey)
+            {
+                uKey += key.Substring(0, 1).ToUpper();
+                uKey += key.Substring(1) + " ";
+            }
+            <td>@uKey</td>
+
+            <td><a asp-controller="List" asp-action="Jobs" asp-route-column="@dict.Key" asp-route-value="@dict.Value">@dict.Value</a></td>
+        </tr>
+
+    }
+</table>
 }
